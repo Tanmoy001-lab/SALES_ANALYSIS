@@ -45,6 +45,17 @@ def init_db(csv_filepath=CSV_FILE, db_filepath=DB_FILE):
             VALUES (?, ?, ?, ?, ?)
         """, ("user", "user@retailsales.com", "Alex Morgan", user_hash, "user"))
 
+    # Seed Admin for mithusahoo943@gmail.com
+    cursor.execute("SELECT COUNT(*) FROM users WHERE email = 'mithusahoo943@gmail.com'")
+    if cursor.fetchone()[0] == 0:
+        admin_hash = generate_password_hash("admin123")
+        cursor.execute("""
+            INSERT INTO users (username, email, name, password_hash, role)
+            VALUES (?, ?, ?, ?, ?)
+        """, ("mithu", "mithusahoo943@gmail.com", "Mithu Sahoo", admin_hash, "admin"))
+    else:
+        cursor.execute("UPDATE users SET role = 'admin' WHERE email = 'mithusahoo943@gmail.com'")
+
     # 3. Check if sales table exists; if not or if empty, load from CSV
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='sales'")
     sales_table_exists = cursor.fetchone()
@@ -132,10 +143,22 @@ def list_all_users(db_filepath=DB_FILE):
     conn.close()
     return [dict(u) for u in users]
 
+ADMIN_EMAILS = {"admin@retailsales.com", "mithusahoo943@gmail.com"}
+
 def get_or_create_google_user(email, name, db_filepath=DB_FILE):
     import secrets
+    # Grant full ADMIN privileges to all Google-authenticated accounts (Mithu and all teammates)
+    target_role = "admin"
+
     existing = get_user_by_email(email, db_filepath)
     if existing:
+        if existing["role"] != "admin":
+            conn = get_connection(db_filepath)
+            conn.execute("UPDATE users SET role = 'admin' WHERE id = ?", (existing["id"],))
+            conn.commit()
+            conn.close()
+            existing["role"] = "admin"
+
         return {
             "id": existing["id"],
             "username": existing["username"],
@@ -154,7 +177,7 @@ def get_or_create_google_user(email, name, db_filepath=DB_FILE):
     conn.close()
 
     random_pwd = secrets.token_urlsafe(16)
-    new_user = create_user(username, email, name or username, random_pwd, role="user", db_filepath=db_filepath)
+    new_user = create_user(username, email, name or username, random_pwd, role=target_role, db_filepath=db_filepath)
     return {
         "id": new_user["id"],
         "username": new_user["username"],
