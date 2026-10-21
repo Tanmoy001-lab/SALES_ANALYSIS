@@ -1,0 +1,68 @@
+{
+  "last_trained": "2026-10-21 11:51:28",
+  "total_samples": 10100,
+  "train_samples": 8080,
+  "test_samples": 2020,
+  "models": {
+    "random_forest": {
+      "name": "Random Forest Regressor (100 Trees)",
+      "r2_score": 0.6505,
+      "mae": 33219.38,
+      "rmse": 220491.45,
+      "is_primary": true
+    },
+    "linear_regression": {
+      "name": "Multiple Linear Regression",
+      "r2_score": 0.614,
+      "mae": 105242.25,
+      "rmse": 231732.15,
+      "is_primary": false
+    }
+  },
+  "feature_importances": [
+    {
+      "feature": "Quantity",
+      "importance": 39.08
+    },
+    {
+      "feature": "Unit_Price",
+      "importance": 35.01
+    },
+    {
+      "feature": "Age",
+      "importance": 6.6
+    },
+    {
+      "feature": "Payment_Mode",
+      "importance": 4.15
+    },
+    {
+      "feature": "Discount",
+      "importance": 3.18
+    },
+    {
+      "feature": "Order_Priority",
+      "importance": 2.98
+    },
+    {
+      "feature": "Category",
+      "importance": 2.78
+    },
+    {
+      "feature": "Customer_Rating",
+      "importance": 2.2
+    },
+    {
+      "feature": "Region",
+      "importance": 2.03
+    },
+    {
+      "feature": "Delivery_Days",
+      "importance": 1.95
+    },
+    {
+      "feature": "Customer_Segment",
+      "importance": 0.04
+    }
+  ]
+}

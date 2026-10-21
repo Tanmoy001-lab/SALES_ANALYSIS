@@ -1,0 +1,2059 @@
+{
+  "total_customers": 3673,
+  "clusters": [
+    {
+      "cluster_id": 0,
+      "name": "Dormant / At-Risk",
+      "badge": "Dormant",
+      "color": "#f43f5e",
+      "strategy": "Win-back discounts & re-engagement campaigns",
+      "avg_recency_days": 977.3,
+      "avg_frequency": 1.63,
+      "avg_monetary": 408304.63,
+      "customer_count": 968,
+      "percentage_customers": 26.4,
+      "percentage_revenue": 15.0
+    },
+    {
+      "cluster_id": 1,
+      "name": "Frequent High-Value",
+      "badge": "High Value",
+      "color": "#38bdf8",
+      "strategy": "Upsell premium tiers & loyalty perks",
+      "avg_recency_days": 265.8,
+      "avg_frequency": 4.03,
+      "avg_monetary": 1009770.51,
+      "customer_count": 1034,
+      "percentage_customers": 28.2,
+      "percentage_revenue": 39.7
+    },
+    {
+      "cluster_id": 2,
+      "name": "VIP Platinum",
+      "badge": "VIP",
+      "color": "#10b981",
+      "strategy": "Concierge account support & exclusive launches",
+      "avg_recency_days": 251.9,
+      "avg_frequency": 5.18,
+      "avg_monetary": 2495377.89,
+      "customer_count": 260,
+      "percentage_customers": 7.1,
+      "percentage_revenue": 24.7
+    },
+    {
+      "cluster_id": 3,
+      "name": "Regular Shoppers",
+      "badge": "Regular",
+      "color": "#fbbf24",
+      "strategy": "Cross-sell relevant categories & bundle offers",
+      "avg_recency_days": 282.4,
+      "avg_frequency": 2.07,
+      "avg_monetary": 383368.64,
+      "customer_count": 1411,
+      "percentage_customers": 38.4,
+      "percentage_revenue": 20.6
+    }
+  ],
+  "sample_points": [
+    {
+      "x": 357.0,
+      "y": 2089662.0,
+      "freq": 5,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 2.0,
+      "y": 87142.4,
+      "freq": 1,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 757.0,
+      "y": 1167578.5,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 568.0,
+      "y": 850177.35,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 267.0,
+      "y": 1753992.6,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 470.0,
+      "y": 421699.8,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 310.0,
+      "y": 1077345.05,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 113.0,
+      "y": 985717.4,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 1104.0,
+      "y": 414715.0,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 815.0,
+      "y": 2550512.45,
+      "freq": 5,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 15.0,
+      "y": 587814.8,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 336.0,
+      "y": 580457.15,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 21.0,
+      "y": 369796.75,
+      "freq": 1,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 821.0,
+      "y": 2774758.1,
+      "freq": 4,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 1187.0,
+      "y": 162346.45,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 423.0,
+      "y": 308093.9,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 306.0,
+      "y": 2038779.75,
+      "freq": 7,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 202.0,
+      "y": 103481.6,
+      "freq": 1,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 252.0,
+      "y": 620065.0,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 1169.0,
+      "y": 287535.8,
+      "freq": 4,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 33.0,
+      "y": 95806.15,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 698.0,
+      "y": 2046306.8,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 306.0,
+      "y": 220789.85,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 844.0,
+      "y": 158468.4,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 44.0,
+      "y": 793263.75,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 622.0,
+      "y": 74041.1,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 413.0,
+      "y": 1238591.0,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 1329.0,
+      "y": 63689.9,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 1191.0,
+      "y": 51554.2,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 416.0,
+      "y": 924161.9,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 510.0,
+      "y": 259081.0,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 125.0,
+      "y": 181848.7,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 12.0,
+      "y": 574051.5,
+      "freq": 5,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 158.0,
+      "y": 328806.4,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 73.0,
+      "y": 900511.65,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 365.0,
+      "y": 1817945.2,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 344.0,
+      "y": 1507676.8,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 326.0,
+      "y": 2604963.65,
+      "freq": 3,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 16.0,
+      "y": 842980.35,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 18.0,
+      "y": 1077555.6,
+      "freq": 5,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 359.0,
+      "y": 269280.0,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 927.0,
+      "y": 90309.6,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 413.0,
+      "y": 192814.5,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 375.0,
+      "y": 40061.25,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 100.0,
+      "y": 1221796.05,
+      "freq": 5,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 75.0,
+      "y": 142594.45,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 87.0,
+      "y": 1436128.3,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 56.0,
+      "y": 1224786.4,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 1023.0,
+      "y": 26241.3,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 1120.0,
+      "y": 166350.6,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 417.0,
+      "y": 576863.9,
+      "freq": 5,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 531.0,
+      "y": 183585.6,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 560.0,
+      "y": 1463940.9,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 32.0,
+      "y": 1652741.4,
+      "freq": 5,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 154.0,
+      "y": 461299.35,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 443.0,
+      "y": 398519.75,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 308.0,
+      "y": 1098778.5,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 1159.0,
+      "y": 407003.6,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 394.0,
+      "y": 302876.8,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 322.0,
+      "y": 348548.0,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 619.0,
+      "y": 68115.0,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 480.0,
+      "y": 86519.35,
+      "freq": 1,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 1043.0,
+      "y": 222790.5,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 86.0,
+      "y": 299447.55,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 157.0,
+      "y": 774992.25,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 35.0,
+      "y": 203402.6,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 118.0,
+      "y": 1971627.15,
+      "freq": 2,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 99.0,
+      "y": 76743.8,
+      "freq": 1,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 484.0,
+      "y": 1441650.25,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 176.0,
+      "y": 2095910.3,
+      "freq": 4,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 426.0,
+      "y": 642883.7,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 43.0,
+      "y": 469600.5,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 150.0,
+      "y": 319963.9,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 49.0,
+      "y": 585640.45,
+      "freq": 6,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 89.0,
+      "y": 339731.5,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 1312.0,
+      "y": 360031.5,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 39.0,
+      "y": 445294.1,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 806.0,
+      "y": 641249.0,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 29.0,
+      "y": 1369326.1,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 208.0,
+      "y": 1690061.45,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 87.0,
+      "y": 643477.65,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 26.0,
+      "y": 348856.2,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 497.0,
+      "y": 788271.85,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 502.0,
+      "y": 562585.25,
+      "freq": 1,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 1447.0,
+      "y": 59500.8,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 3.0,
+      "y": 474094.75,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 724.0,
+      "y": 37746.9,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 259.0,
+      "y": 1283550.15,
+      "freq": 5,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 2.0,
+      "y": 531198.0,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 122.0,
+      "y": 1260685.0,
+      "freq": 5,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 145.0,
+      "y": 1274367.15,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 820.0,
+      "y": 416555.2,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 253.0,
+      "y": 79234.2,
+      "freq": 1,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 742.0,
+      "y": 677038.7,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 91.0,
+      "y": 107743.9,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 400.0,
+      "y": 2290804.4,
+      "freq": 6,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 626.0,
+      "y": 221965.6,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 781.0,
+      "y": 1018312.5,
+      "freq": 3,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 142.0,
+      "y": 706705.95,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 577.0,
+      "y": 293310.0,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 458.0,
+      "y": 3479893.65,
+      "freq": 8,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 391.0,
+      "y": 430854.4,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 904.0,
+      "y": 250459.8,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 116.0,
+      "y": 149460.65,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 797.0,
+      "y": 87011.0,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 858.0,
+      "y": 252081.0,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 122.0,
+      "y": 2153088.55,
+      "freq": 3,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 1024.0,
+      "y": 70051.15,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 127.0,
+      "y": 674433.6,
+      "freq": 5,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 16.0,
+      "y": 377396.25,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 826.0,
+      "y": 1000433.0,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 936.0,
+      "y": 355513.3,
+      "freq": 3,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 126.0,
+      "y": 1869320.15,
+      "freq": 5,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 292.0,
+      "y": 230485.2,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 831.0,
+      "y": 887098.5,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 716.0,
+      "y": 578545.95,
+      "freq": 3,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 182.0,
+      "y": 1129092.25,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 1.0,
+      "y": 789836.9,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 671.0,
+      "y": 450353.3,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 23.0,
+      "y": 1940789.8,
+      "freq": 4,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 103.0,
+      "y": 1486245.4,
+      "freq": 5,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 534.0,
+      "y": 775553.8,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 918.0,
+      "y": 170079.45,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 185.0,
+      "y": 1316897.2,
+      "freq": 5,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 56.0,
+      "y": 50868.0,
+      "freq": 1,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 41.0,
+      "y": 399167.0,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 286.0,
+      "y": 1440562.2,
+      "freq": 5,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 6.0,
+      "y": 342295.2,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 82.0,
+      "y": 712025.85,
+      "freq": 5,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 264.0,
+      "y": 1291917.1,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 194.0,
+      "y": 1474881.3,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 106.0,
+      "y": 1665960.25,
+      "freq": 5,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 20.0,
+      "y": 1974501.75,
+      "freq": 6,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 467.0,
+      "y": 100481.25,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 957.0,
+      "y": 1224822.65,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 219.0,
+      "y": 515403.5,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 607.0,
+      "y": 230919.1,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 293.0,
+      "y": 179924.0,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 272.0,
+      "y": 1033986.4,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 505.0,
+      "y": 25594.2,
+      "freq": 1,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 280.0,
+      "y": 47120.4,
+      "freq": 1,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 1317.0,
+      "y": 107298.0,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 1133.0,
+      "y": 894499.2,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 243.0,
+      "y": 1022169.3,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 665.0,
+      "y": 182548.8,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 466.0,
+      "y": 223951.0,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 270.0,
+      "y": 756855.75,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 1131.0,
+      "y": 647721.6,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 712.0,
+      "y": 1075393.95,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 159.0,
+      "y": 96176.55,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 1111.0,
+      "y": 309344.4,
+      "freq": 3,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 310.0,
+      "y": 361476.8,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 820.0,
+      "y": 37020.55,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 178.0,
+      "y": 760000.25,
+      "freq": 5,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 1332.0,
+      "y": 5156.1,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 584.0,
+      "y": 320021.5,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 786.0,
+      "y": 110495.0,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 1308.0,
+      "y": 271636.35,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 1020.0,
+      "y": 509448.3,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 174.0,
+      "y": 594457.95,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 765.0,
+      "y": 799080.0,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 268.0,
+      "y": 503472.45,
+      "freq": 5,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 33.0,
+      "y": 3870409.35,
+      "freq": 4,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 565.0,
+      "y": 695742.85,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 25.0,
+      "y": 248584.6,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 591.0,
+      "y": 177407.1,
+      "freq": 1,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 240.0,
+      "y": 366579.2,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 265.0,
+      "y": 46512.1,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 562.0,
+      "y": 583104.2,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 819.0,
+      "y": 1297575.6,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 57.0,
+      "y": 400860.0,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 340.0,
+      "y": 318967.2,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 137.0,
+      "y": 361646.95,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 376.0,
+      "y": 398560.0,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 247.0,
+      "y": 1167716.55,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 346.0,
+      "y": 2163651.95,
+      "freq": 7,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 119.0,
+      "y": 167141.5,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 17.0,
+      "y": 1685021.0,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 1013.0,
+      "y": 82044.8,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 242.0,
+      "y": 393807.75,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 226.0,
+      "y": 158183.55,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 1129.0,
+      "y": 46971.0,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 969.0,
+      "y": 1407411.8,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 756.0,
+      "y": 801491.45,
+      "freq": 3,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 187.0,
+      "y": 547120.2,
+      "freq": 1,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 1347.0,
+      "y": 94240.8,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 969.0,
+      "y": 1323098.25,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 930.0,
+      "y": 120276.0,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 196.0,
+      "y": 912315.0,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 130.0,
+      "y": 1521710.1,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 577.0,
+      "y": 243991.2,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 234.0,
+      "y": 1083247.0,
+      "freq": 6,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 419.0,
+      "y": 625859.4,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 611.0,
+      "y": 133488.0,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 383.0,
+      "y": 1286786.4,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 336.0,
+      "y": 85652.3,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 475.0,
+      "y": 1280826.0,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 542.0,
+      "y": 799556.1,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 885.0,
+      "y": 62622.0,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 1195.0,
+      "y": 444307.5,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 439.0,
+      "y": 354733.0,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 24.0,
+      "y": 758310.2,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 210.0,
+      "y": 341863.7,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 470.0,
+      "y": 1299416.2,
+      "freq": 5,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 270.0,
+      "y": 498357.2,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 659.0,
+      "y": 313847.0,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 511.0,
+      "y": 1348481.8,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 191.0,
+      "y": 756043.1,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 1107.0,
+      "y": 364908.6,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 870.0,
+      "y": 2349329.75,
+      "freq": 4,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 23.0,
+      "y": 1976308.85,
+      "freq": 7,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 332.0,
+      "y": 229977.9,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 525.0,
+      "y": 41900.8,
+      "freq": 1,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 811.0,
+      "y": 308974.5,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 12.0,
+      "y": 1138174.7,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 254.0,
+      "y": 754643.5,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 1135.0,
+      "y": 42359.4,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 820.0,
+      "y": 508069.85,
+      "freq": 3,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 685.0,
+      "y": 1922309.2,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 132.0,
+      "y": 3990158.65,
+      "freq": 7,
+      "cluster": 2,
+      "cluster_name": "VIP Platinum",
+      "color": "#10b981"
+    },
+    {
+      "x": 340.0,
+      "y": 1271543.25,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 128.0,
+      "y": 237868.8,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 473.0,
+      "y": 433065.3,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 1183.0,
+      "y": 1126369.8,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 688.0,
+      "y": 515584.5,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 1227.0,
+      "y": 108967.5,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 98.0,
+      "y": 1646995.25,
+      "freq": 5,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 143.0,
+      "y": 1243429.4,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 507.0,
+      "y": 1785649.15,
+      "freq": 2,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 1100.0,
+      "y": 239724.0,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 934.0,
+      "y": 157811.55,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 1222.0,
+      "y": 204863.4,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 262.0,
+      "y": 1261392.0,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 847.0,
+      "y": 452843.3,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 1025.0,
+      "y": 829087.3,
+      "freq": 3,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 548.0,
+      "y": 872514.8,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 911.0,
+      "y": 236992.5,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 971.0,
+      "y": 185045.0,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 264.0,
+      "y": 883167.75,
+      "freq": 3,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 300.0,
+      "y": 49423.5,
+      "freq": 1,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 243.0,
+      "y": 284917.9,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 760.0,
+      "y": 377875.8,
+      "freq": 2,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 199.0,
+      "y": 15928.0,
+      "freq": 1,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 547.0,
+      "y": 407371.5,
+      "freq": 1,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 451.0,
+      "y": 207629.8,
+      "freq": 2,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 773.0,
+      "y": 37631.25,
+      "freq": 1,
+      "cluster": 0,
+      "cluster_name": "Dormant / At-Risk",
+      "color": "#f43f5e"
+    },
+    {
+      "x": 331.0,
+      "y": 248344.7,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 436.0,
+      "y": 443784.8,
+      "freq": 3,
+      "cluster": 3,
+      "cluster_name": "Regular Shoppers",
+      "color": "#fbbf24"
+    },
+    {
+      "x": 228.0,
+      "y": 384355.8,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    },
+    {
+      "x": 147.0,
+      "y": 625797.85,
+      "freq": 4,
+      "cluster": 1,
+      "cluster_name": "Frequent High-Value",
+      "color": "#38bdf8"
+    }
+  ]
+}

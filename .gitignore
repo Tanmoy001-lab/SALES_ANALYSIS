@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.pyc
+retail_sales.db
+.system_generated/
+desktop.ini

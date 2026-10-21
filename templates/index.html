@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetailPulse AI — Enterprise Retail Sales Analytics & Machine Learning Platform</title>
+    <meta name="description" content="State-of-the-art retail analytics platform with interactive dashboards, machine learning sales forecasting, customer segmentation clustering, and full role-based administration.">
+
+    <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <!-- Custom Enterprise Stylesheet -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- STICKY TOP NAVIGATION BAR                  -->
+    <!-- ========================================== -->
+    <header class="top-navbar">
+        <div class="navbar-inner">
+            <!-- Brand Logo -->
+            <a href="#" class="brand-section">
+                <div class="brand-logo-icon">⚡</div>
+                <div class="brand-text">
+                    <h1>Retail<span>Pulse</span> AI</h1>
+                    <p>Enterprise Sales & ML Analytics</p>
+                </div>
+            </a>
+
+            <!-- Global Filter Selectors -->
+            <div class="navbar-center">
+                <div class="nav-filter-group">
+                    <label>Region:</label>
+                    <select id="global-region-select" class="nav-select">
+                        <option value="All">All Regions</option>
+                    </select>
+                </div>
+                <div class="nav-filter-group">
+                    <label>Category:</label>
+                    <select id="global-category-select" class="nav-select">
+                        <option value="All">All Categories</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- User Profile & Quick Role Switcher -->
+            <div class="navbar-actions">
+                <div class="role-switch-dropdown">
+                    <div class="user-profile-badge" id="topbar-profile-badge" title="Click to switch role or sign in">
+                        <div class="user-avatar" id="topbar-user-avatar">AD</div>
+                        <div class="user-info">
+                            <span class="user-name" id="topbar-user-name">Admin Astha</span>
+                            <span class="user-role-pill role-admin" id="topbar-user-role">ADMIN</span>
+                        </div>
+                        <span style="font-size: 0.7rem; color: #94a3b8; margin-left: 0.2rem;">▾</span>
+                    </div>
+
+                    <!-- Role Dropdown Menu -->
+                    <div class="role-switch-menu" id="role-switch-menu">
+                        <div style="padding: 0.4rem 0.85rem; font-size: 0.72rem; color: #64748b; text-transform: uppercase; font-weight: 700;">
+                            Quick Role Switcher
+                        </div>
+                        <div class="role-menu-item" onclick="quickLogin('admin')">
+                            <span>👑 Admin Astha</span>
+                            <span class="user-role-pill role-admin">ADMIN</span>
+                        </div>
+                        <div class="role-menu-item" onclick="quickLogin('user')">
+                            <span>💼 Alex Morgan</span>
+                            <span class="user-role-pill role-user">USER</span>
+                        </div>
+                        <div class="role-menu-divider"></div>
+                        <a href="/api/v1/auth/google-login" class="role-menu-item" style="text-decoration: none; color: inherit;">
+                            <span>🌐 Sign In with Google</span>
+                        </a>
+                        <div class="role-menu-item" onclick="openModal('auth-modal')">
+                            <span>🔑 Sign In / Register</span>
+                        </div>
+                        <div class="role-menu-item" onclick="handleLogout()" style="color: #fb7185;">
+                            <span>🚪 Sign Out</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-sm btn-outline" onclick="openModal('auth-modal')">
+                    Auth Center
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- MAIN CONTAINER                             -->
+    <!-- ========================================== -->
+    <main class="app-container">
+
+        <!-- Navigation Tabs -->
+        <nav class="main-nav-tabs">
+            <button class="nav-tab-btn active" data-tab="overview">
+                <span>📊</span> Executive Overview
+            </button>
+            <button class="nav-tab-btn" data-tab="ml-studio">
+                <span>🤖</span> AI & ML Studio
+                <span class="tab-badge">Random Forest</span>
+            </button>
+            <button class="nav-tab-btn" data-tab="eda">
+                <span>🔬</span> Deep-Dive EDA
+                <span class="tab-badge">Heatmap & Outliers</span>
+            </button>
+            <button class="nav-tab-btn" data-tab="transactions">
+                <span>📋</span> Transactions & CRUD
+                <span class="tab-badge" id="tab-records-count">10.1k Records</span>
+            </button>
+            <button class="nav-tab-btn" data-tab="admin" id="tab-btn-admin">
+                <span>🛡️</span> Admin Console
+                <span class="tab-badge" style="background: rgba(16,185,129,0.3); color:#34d399;">Active</span>
+            </button>
+        </nav>
+
+        <!-- ========================================== -->
+        <!-- TAB 1: EXECUTIVE OVERVIEW                  -->
+        <!-- ========================================== -->
+        <section class="tab-content active" id="tab-content-overview">
+            <!-- KPI Cards Grid -->
+            <div class="kpi-grid">
+                <!-- Total Sales -->
+                <div class="kpi-card emerald">
+                    <div class="kpi-header">
+                        <span class="kpi-label">Total Revenue</span>
+                        <div class="kpi-icon-wrap">💰</div>
+                    </div>
+                    <div class="kpi-value" id="kpi-sales">$0.00</div>
+                    <div class="kpi-meta">
+                        <span class="kpi-badge positive">↑ Live</span>
+                        <span>Across all transactions</span>
+                    </div>
+                </div>
+
+                <!-- Total Profit -->
+                <div class="kpi-card cyan">
+                    <div class="kpi-header">
+                        <span class="kpi-label">Gross Profit</span>
+                        <div class="kpi-icon-wrap">📈</div>
+                    </div>
+                    <div class="kpi-value" id="kpi-profit">$0.00</div>
+                    <div class="kpi-meta">
+                        <span class="kpi-badge positive">Profitable</span>
+                        <span>Net operational profit</span>
+                    </div>
+                </div>
+
+                <!-- Profit Margin -->
+                <div class="kpi-card indigo">
+                    <div class="kpi-header">
+                        <span class="kpi-label">Profit Margin</span>
+                        <div class="kpi-icon-wrap">⚖️</div>
+                    </div>
+                    <div class="kpi-value" id="kpi-margin">0.0%</div>
+                    <div class="kpi-meta">
+                        <span>Target: 15.0%</span>
+                    </div>
+                </div>
+
+                <!-- Total Orders -->
+                <div class="kpi-card amber">
+                    <div class="kpi-header">
+                        <span class="kpi-label">Total Orders</span>
+                        <div class="kpi-icon-wrap">📦</div>
+                    </div>
+                    <div class="kpi-value" id="kpi-orders">0</div>
+                    <div class="kpi-meta">
+                        <span>Distinct order fulfillment</span>
+                    </div>
+                </div>
+
+                <!-- Return Rate -->
+                <div class="kpi-card rose">
+                    <div class="kpi-header">
+                        <span class="kpi-label">Return Rate</span>
+                        <div class="kpi-icon-wrap">🔄</div>
+                    </div>
+                    <div class="kpi-value" id="kpi-returns">0.0%</div>
+                    <div class="kpi-meta">
+                        <span>Benchmark: &lt; 20%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row 1: Sales Trend & Category Performance -->
+            <div class="charts-grid-2">
+                <div class="glass-card">
+                    <div class="glass-card-header">
+                        <div>
+                            <h3 class="glass-card-title"><span>📈</span> Monthly Revenue & Profit Trajectory</h3>
+                            <p class="glass-card-subtitle">Aggregated timeline showing monthly financial momentum</p>
+                        </div>
+                    </div>
+                    <div class="chart-container-wrap">
+                        <canvas id="salesTrendChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="glass-card">
+                    <div class="glass-card-header">
+                        <div>
+                            <h3 class="glass-card-title"><span>🏷️</span> Category Performance</h3>
+                            <p class="glass-card-subtitle">Side-by-side revenue and profitability by product category</p>
+                        </div>
+                    </div>
+                    <div class="chart-container-wrap">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row 2: Top Products & Regional Sales -->
+            <div class="charts-grid-2">
+                <div class="glass-card">
+                    <div class="glass-card-header">
+                        <div>
+                            <h3 class="glass-card-title"><span>🏆</span> Top 10 Best-Selling Products</h3>
+                            <p class="glass-card-subtitle">Ranked by aggregate gross sales revenue</p>
+                        </div>
+                    </div>
+                    <div class="chart-container-wrap">
+                        <canvas id="topProductsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="glass-card">
+                    <div class="glass-card-header">
+                        <div>
+                            <h3 class="glass-card-title"><span>🌍</span> Geographic Revenue Distribution</h3>
+                            <p class="glass-card-subtitle">Market share by regional territory</p>
+                        </div>
+                    </div>
+                    <div class="chart-container-wrap">
+                        <canvas id="regionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 2: AI & MACHINE LEARNING STUDIO        -->
+        <!-- ========================================== -->
+        <section class="tab-content" id="tab-content-ml-studio">
+            <div class="ml-studio-grid">
+                <!-- Left: AI Sales Predictor Form -->
+                <div class="glass-card">
+                    <div class="glass-card-header">
+                        <div>
+                            <h3 class="glass-card-title"><span>🤖</span> Random Forest Sales Prediction Engine</h3>
+                            <p class="glass-card-subtitle">Enter order attributes to forecast net revenue and profit margin using trained Scikit-Learn models</p>
+                        </div>
+                        <span class="user-role-pill role-admin">ML Pipeline Active</span>
+                    </div>
+
+                    <form id="predictionForm" onsubmit="event.preventDefault(); makePrediction();">
+                        <div class="ml-form-grid">
+                            <!-- Quantity Slider -->
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>Quantity:</span>
+                                    <span class="form-label-value" id="val-predQuantity">5</span>
+                                </label>
+                                <input type="range" id="predQuantity" min="1" max="50" value="5" class="range-slider">
+                            </div>
+
+                            <!-- Unit Price -->
+                            <div class="form-group">
+                                <label class="form-label">Unit Price ($)</label>
+                                <input type="number" id="predUnitPrice" value="250" min="1" step="0.5" class="form-input">
+                            </div>
+
+                            <!-- Discount Slider -->
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <span>Discount (%):</span>
+                                    <span class="form-label-value" id="val-predDiscount">10%</span>
+                                </label>
+                                <input type="range" id="predDiscount" min="0" max="60" value="10" class="range-slider">
+                            </div>
+
+                            <!-- Category -->
+                            <div class="form-group">
+                                <label class="form-label">Product Category</label>
+                                <select id="predCategory" class="form-select">
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Home & Kitchen">Home & Kitchen</option>
+                                    <option value="Clothing">Clothing</option>
+                                    <option value="Furniture">Furniture</option>
+                                    <option value="Sports">Sports</option>
+                                </select>
+                            </div>
+
+                            <!-- Region -->
+                            <div class="form-group">
+                                <label class="form-label">Region</label>
+                                <select id="predRegion" class="form-select">
+                                    <option value="North">North</option>
+                                    <option value="South">South</option>
+                                    <option value="East">East</option>
+                                    <option value="West">West</option>
+                                    <option value="Central">Central</option>
+                                </select>
+                            </div>
+
+                            <!-- Customer Segment -->
+                            <div class="form-group">
+                                <label class="form-label">Customer Segment</label>
+                                <select id="predSegment" class="form-select">
+                                    <option value="Regular">Regular</option>
+                                    <option value="Corporate">Corporate</option>
+                                    <option value="Premium">Premium</option>
+                                </select>
+                            </div>
+
+                            <!-- Order Priority -->
+                            <div class="form-group">
+                                <label class="form-label">Order Priority</label>
+                                <select id="predPriority" class="form-select">
+                                    <option value="Medium">Medium</option>
+                                    <option value="High">High</option>
+                                    <option value="Critical">Critical</option>
+                                    <option value="Low">Low</option>
+                                </select>
+                            </div>
+
+                            <!-- Delivery Days -->
+                            <div class="form-group">
+                                <label class="form-label">Estimated Delivery Days</label>
+                                <input type="number" id="predDeliveryDays" value="3" min="1" max="15" class="form-input">
+                            </div>
+
+                            <!-- Customer Rating -->
+                            <div class="form-group" style="grid-column: span 2;">
+                                <label class="form-label">Customer Rating (1.0 to 5.0)</label>
+                                <input type="number" id="predRating" value="4.2" min="1.0" max="5.0" step="0.1" class="form-input">
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 1.25rem;">
+                            <button type="submit" class="btn btn-primary" id="btn-run-prediction" style="width: 100%;">
+                                <span>✨</span> Run AI Sales Prediction
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Real-Time AI Prediction Output Card -->
+                    <div class="prediction-result-card" id="predResultCard">
+                        <div class="pred-hero-metric">
+                            <div>
+                                <p style="font-size: 0.72rem; color: #94a3b8; font-weight: 700; text-transform: uppercase;">Forecasted Sales (ML)</p>
+                                <div class="pred-hero-val" id="res-sales">$5,847.38</div>
+                            </div>
+                            <div style="text-align: right;">
+                                <span class="kpi-badge positive" id="res-confidence">92.4% Confidence</span>
+                            </div>
+                        </div>
+
+                        <div class="pred-breakdown-grid">
+                            <div class="pred-stat-box">
+                                <p>Gross Revenue</p>
+                                <h4 id="res-gross" style="color: #38bdf8;">$1,250.00</h4>
+                            </div>
+                            <div class="pred-stat-box">
+                                <p>Discount Impact</p>
+                                <h4 id="res-discount" style="color: #fb7185;">-$125.00</h4>
+                            </div>
+                            <div class="pred-stat-box">
+                                <p>Projected Profit</p>
+                                <h4 id="res-profit" style="color: #34d399;">$1,091.51</h4>
+                            </div>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:#94a3b8; padding-top:0.25rem;">
+                            <span>Estimated Profit Margin: <strong id="res-margin" style="color:#34d399;">18.7%</strong></span>
+                            <span>Engine: <strong>RandomForestRegressor (100 Trees)</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Model Intelligence & Benchmarking -->
+                <div class="glass-card">
+                    <div class="glass-card-header">
+                        <div>
+                            <h3 class="glass-card-title"><span>⚖️</span> Model Benchmarking & Accuracy</h3>
+                            <p class="glass-card-subtitle">Evaluated on 20% holdout test set (2,020 samples)</p>
+                        </div>
+                        <button class="btn btn-sm btn-cyan" id="btn-retrain-ml" onclick="retrainModels()">
+                            <span>⚡</span> Retrain AI Models
+                        </button>
+                    </div>
+
+                    <!-- Comparison Table / Cards -->
+                    <div class="benchmark-cards">
+                        <!-- Random Forest -->
+                        <div class="benchmark-card winner">
+                            <div class="benchmark-header">
+                                <span class="benchmark-title" style="color: #34d399;">🌲 Random Forest</span>
+                                <span class="kpi-badge positive">Best Model</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">R² Score:</span>
+                                <span class="metric-val" id="rf-r2" style="color:#34d399;">65.1%</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">RMSE:</span>
+                                <span class="metric-val" id="rf-rmse">$220,491</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">MAE:</span>
+                                <span class="metric-val" id="rf-mae">$33,219</span>
+                            </div>
+                        </div>
+
+                        <!-- Linear Regression -->
+                        <div class="benchmark-card">
+                            <div class="benchmark-header">
+                                <span class="benchmark-title" style="color: #94a3b8;">📏 Linear Regression</span>
+                                <span class="tab-badge">Baseline</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">R² Score:</span>
+                                <span class="metric-val" id="lr-r2">61.4%</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">RMSE:</span>
+                                <span class="metric-val" id="lr-rmse">$231,732</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">MAE:</span>
+                                <span class="metric-val" id="lr-mae">$105,242</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature Importance Chart -->
+                    <div style="margin-top: 1.25rem;">
+                        <h4 style="font-size: 0.88rem; font-weight: 700; color: #f8fafc; margin-bottom: 0.5rem;">
+                            Top Factors Influencing Sales (Feature Importance)
+                        </h4>
+                        <div class="chart-container-wrap" style="height: 220px;">
+                            <canvas id="featureImportanceChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:#64748b; margin-top:0.75rem;">
+                        <span>Last Retrained: <strong id="ml-last-trained" style="color:#94a3b8;">Active</strong></span>
+                        <span>Preprocessed: <strong>OneHotEncoder + StandardScaler</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer RFM Segmentation Section (K-Means) -->
+            <div class="glass-card" style="margin-top: 2rem;">
+                <div class="glass-card-header">
+                    <div>
+                        <h3 class="glass-card-title"><span>👥</span> Customer Segmentation Intelligence (RFM K-Means Clustering)</h3>
+                        <p class="glass-card-subtitle">Unsupervised machine learning identifying 4 high-impact shopper archetypes based on Recency, Frequency, and Monetary spend</p>
+                    </div>
+                    <span class="user-role-pill role-admin">3,673 Unique Customers Profiled</span>
+                </div>
+
+                <!-- 4 Clusters Cards -->
+                <div class="clusters-grid" id="clusters-cards-container">
+                    <!-- Loaded dynamically by JS -->
+                </div>
+
+                <!-- Customer RFM 2D Scatter Chart -->
+                <div style="margin-top: 1.5rem;">
+                    <h4 style="font-size: 0.92rem; font-weight: 700; color: #f8fafc; margin-bottom: 0.5rem;">
+                        Customer Clusters Distribution: Recency vs Monetary Spend
+                    </h4>
+                    <div class="chart-container-wrap" style="height: 320px;">
+                        <canvas id="clusterScatterChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 3: EXPLORATORY DATA ANALYSIS (EDA)     -->
+        <!-- ========================================== -->
+        <section class="tab-content" id="tab-content-eda">
+            <!-- Feature Correlation Matrix Heatmap -->
+            <div class="glass-card" style="margin-bottom: 2rem;">
+                <div class="glass-card-header">
+                    <div>
+                        <h3 class="glass-card-title"><span>🧬</span> Feature Correlation Matrix Heatmap</h3>
+                        <p class="glass-card-subtitle">Pearson correlation coefficients between numerical metrics (-1.0 to +1.0)</p>
+                    </div>
+                    <span class="kpi-badge positive">Multivariate Analysis</span>
+                </div>
+                <div id="heatmap-container" class="heatmap-table-wrap">
+                    <!-- Populated dynamically by JS -->
+                </div>
+            </div>
+
+            <!-- Sales Outliers Section -->
+            <div class="glass-card" style="margin-bottom: 2rem;">
+                <div class="glass-card-header">
+                    <div>
+                        <h3 class="glass-card-title"><span>🔍</span> Sales Outliers & Distribution Analysis</h3>
+                        <p class="glass-card-subtitle">Interquartile Range (IQR) detection threshold and extreme value transactions</p>
+                    </div>
+                    <span class="user-role-pill role-user" id="outlier-badge">Detecting...</span>
+                </div>
+
+                <!-- Stat Summary Cards -->
+                <div class="pred-breakdown-grid" style="grid-template-columns: repeat(5, 1fr); margin-bottom: 1.5rem;">
+                    <div class="pred-stat-box">
+                        <p>Q1 (25th Percentile)</p>
+                        <h4 id="outlier-q1" style="color: #94a3b8;">$0</h4>
+                    </div>
+                    <div class="pred-stat-box">
+                        <p>Median (50th Percentile)</p>
+                        <h4 id="outlier-median" style="color: #34d399;">$0</h4>
+                    </div>
+                    <div class="pred-stat-box">
+                        <p>Q3 (75th Percentile)</p>
+                        <h4 id="outlier-q3" style="color: #94a3b8;">$0</h4>
+                    </div>
+                    <div class="pred-stat-box">
+                        <p>Upper Threshold (IQR)</p>
+                        <h4 id="outlier-threshold" style="color: #fbbf24;">$0</h4>
+                    </div>
+                    <div class="pred-stat-box">
+                        <p>Max Sales Observed</p>
+                        <h4 id="outlier-max" style="color: #fb7185;">$0</h4>
+                    </div>
+                </div>
+
+                <!-- Outlier Transactions Table -->
+                <h4 style="font-size: 0.88rem; font-weight: 700; color: #f8fafc; margin-bottom: 0.75rem;">
+                    Top Extreme Outlier Orders (> Upper Bound)
+                </h4>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer Name</th>
+                                <th>Product</th>
+                                <th>Sales Revenue</th>
+                            </tr>
+                        </thead>
+                        <tbody id="outliers-extreme-tbody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Product Performance & Top Returns -->
+            <div class="charts-grid-2">
+                <div class="glass-card">
+                    <div class="glass-card-header">
+                        <div>
+                            <h3 class="glass-card-title"><span>🎯</span> Product Performance: Sales vs Profit Quadrant</h3>
+                            <p class="glass-card-subtitle">Scatter distribution highlighting high-revenue drivers vs margin champions</p>
+                        </div>
+                    </div>
+                    <div class="chart-container-wrap">
+                        <canvas id="productPerformanceChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="glass-card">
+                    <div class="glass-card-header">
+                        <div>
+                            <h3 class="glass-card-title"><span>⚠️</span> Top 10 Products by Return Rate (%)</h3>
+                            <p class="glass-card-subtitle">Products requiring quality review and shipping inspection</p>
+                        </div>
+                    </div>
+                    <div class="chart-container-wrap">
+                        <canvas id="topReturnProductsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 4: TRANSACTIONS & DATA EXPLORER (CRUD) -->
+        <!-- ========================================== -->
+        <section class="tab-content" id="tab-content-transactions">
+            <div class="glass-card">
+                <div class="glass-card-header">
+                    <div>
+                        <h3 class="glass-card-title"><span>📋</span> Transaction Records & Database Explorer</h3>
+                        <p class="glass-card-subtitle">Browse, search, filter, and manage sales order records stored in SQLite</p>
+                    </div>
+                    <div style="display:flex; gap:0.5rem;">
+                        <button class="btn btn-sm btn-primary" id="btn-add-transaction" onclick="openAddTransactionModal()">
+                            <span>➕</span> Add Transaction
+                        </button>
+                        <button class="btn btn-sm btn-secondary" onclick="exportCSV()">
+                            <span>📥</span> Export CSV
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Table Controls & Filters -->
+                <div class="data-table-controls">
+                    <div class="search-input-wrap">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="trans-search-input" placeholder="Search by customer, order ID, product..." oninput="handleSearchTransactions(event)">
+                    </div>
+
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <select id="trans-filter-region" class="form-select" style="padding:0.45rem 0.65rem;" onchange="AppState.transactions.region = this.value; AppState.transactions.offset = 0; loadTransactions();">
+                            <option value="All">All Regions</option>
+                        </select>
+                        <select id="trans-filter-category" class="form-select" style="padding:0.45rem 0.65rem;" onchange="AppState.transactions.category = this.value; AppState.transactions.offset = 0; loadTransactions();">
+                            <option value="All">All Categories</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Transactions Data Table -->
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Date</th>
+                                <th>Customer</th>
+                                <th>Region</th>
+                                <th>Category</th>
+                                <th>Product Name</th>
+                                <th>Qty</th>
+                                <th>Sales</th>
+                                <th>Profit</th>
+                                <th>Return Status</th>
+                                <th id="th-actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactions-tbody">
+                            <!-- Populated dynamically by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination Footer -->
+                <div class="pagination-wrap">
+                    <span id="pagination-info">Showing 1–12 of 10,100 transactions</span>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn btn-sm btn-secondary" id="btn-prev-page" onclick="prevPage()">
+                            ← Previous
+                        </button>
+                        <button class="btn btn-sm btn-secondary" id="btn-next-page" onclick="nextPage()">
+                            Next →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 5: ADMIN CONTROL CENTER                -->
+        <!-- ========================================== -->
+        <section class="tab-content" id="tab-content-admin">
+            <div class="glass-card" style="margin-bottom: 2rem;">
+                <div class="glass-card-header">
+                    <div>
+                        <h3 class="glass-card-title"><span>🛡️</span> Administrative System Control & Maintenance</h3>
+                        <p class="glass-card-subtitle">Database diagnostics, batch dataset ingestion, and AI model re-training</p>
+                    </div>
+                    <span class="user-role-pill role-admin">Administrator Clearance</span>
+                </div>
+
+                <!-- Admin Diagnostic Cards -->
+                <div class="pred-breakdown-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 2rem;">
+                    <div class="pred-stat-box">
+                        <p>Total Database Records</p>
+                        <h4 id="admin-total-records" style="color: #38bdf8;">10,100</h4>
+                    </div>
+                    <div class="pred-stat-box">
+                        <p>Database File Size</p>
+                        <h4 id="admin-db-size" style="color: #34d399;">2.3 MB</h4>
+                    </div>
+                    <div class="pred-stat-box">
+                        <p>Registered System Users</p>
+                        <h4 id="admin-total-users" style="color: #818cf8;">2</h4>
+                    </div>
+                    <div class="pred-stat-box">
+                        <p>Active Models Status</p>
+                        <h4 id="admin-last-trained" style="color: #fbbf24; font-size: 0.95rem;">Active & Trained</h4>
+                    </div>
+                </div>
+
+                <!-- Batch Dataset Upload Section -->
+                <div class="glass-card" style="background: rgba(15, 23, 42, 0.5); margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 0.95rem; font-weight: 700; color: #f8fafc; margin-bottom: 0.4rem;">
+                        <span>📤</span> Batch Dataset Ingestion (CSV)
+                    </h4>
+                    <p style="font-size: 0.78rem; color: #94a3b8; margin-bottom: 1rem;">
+                        Upload a new CSV sales transactions file to append records to the SQLite database and automatically update ML models.
+                    </p>
+
+                    <form id="uploadCSVForm" onsubmit="handleCSVUpload(event)" style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+                        <input type="file" id="csv-file-input" accept=".csv" class="form-input" style="flex:1; min-width:260px;">
+                        <button type="submit" class="btn btn-primary" id="btn-upload-submit">
+                            <span>📤</span> Upload Dataset
+                        </button>
+                    </form>
+                </div>
+
+                <!-- One-Click Retraining -->
+                <div class="glass-card" style="background: rgba(15, 23, 42, 0.5);">
+                    <h4 style="font-size: 0.95rem; font-weight: 700; color: #f8fafc; margin-bottom: 0.4rem;">
+                        <span>⚡</span> AI Pipeline Orchestration
+                    </h4>
+                    <p style="font-size: 0.78rem; color: #94a3b8; margin-bottom: 1rem;">
+                        Force an on-demand re-training pass on all Random Forest regression pipelines, feature encoder transformers, and RFM K-Means clusters.
+                    </p>
+                    <button class="btn btn-cyan" onclick="retrainModels()">
+                        <span>🔄</span> Trigger Full Model Re-training
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- AUTHENTICATION MODAL (LOGIN & REGISTER)    -->
+    <!-- ========================================== -->
+    <div class="modal-overlay" id="auth-modal">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" onclick="closeModal('auth-modal')">✕</button>
+
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+                <div class="brand-logo-icon" style="margin: 0 auto 0.75rem;">⚡</div>
+                <h3 style="font-size: 1.4rem; color: #fff;">RetailPulse Authentication</h3>
+                <p style="font-size: 0.8rem; color: #94a3b8;">Choose a quick demo account or sign in with your credentials</p>
+            </div>
+
+            <!-- Quick 1-Click Demo Logins -->
+            <div class="quick-demo-box">
+                <p>⚡ <strong>One-Click Instant Role Switching:</strong></p>
+                <div class="quick-demo-btn-group">
+                    <button type="button" class="btn btn-sm btn-primary" onclick="quickLogin('admin')">
+                        👑 Login as Admin
+                    </button>
+                    <button type="button" class="btn btn-sm btn-cyan" onclick="quickLogin('user')">
+                        💼 Login as Analyst
+                    </button>
+                </div>
+            </div>
+
+            <!-- Google OAuth Sign In -->
+            <div style="margin: 1.25rem 0 1rem 0;">
+                <a href="/api/v1/auth/google-login" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.18); background: #ffffff; color: #1e293b; font-weight: 600; font-size: 0.95rem; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.15s ease, box-shadow 0.15s ease; cursor: pointer;">
+                    <svg width="20" height="20" viewBox="0 0 48 48" style="flex-shrink:0;">
+                        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                    </svg>
+                    <span>Sign in with Google</span>
+                </a>
+            </div>
+
+            <div style="display: flex; align-items: center; margin-bottom: 1.25rem; gap: 10px;">
+                <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.12);"></div>
+                <span style="font-size: 0.72rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">or email credentials</span>
+                <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.12);"></div>
+            </div>
+
+            <!-- Auth Form Switcher Tabs -->
+            <div class="auth-tabs">
+                <button type="button" class="auth-tab-btn active" id="auth-tab-login">Sign In</button>
+                <button type="button" class="auth-tab-btn" id="auth-tab-register">Create Account</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="form-login" onsubmit="handleLoginSubmit(event)">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" id="login-email" value="admin@retailsales.com" class="form-input" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label class="form-label">Password</label>
+                    <input type="password" id="login-password" value="admin123" class="form-input" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Sign In
+                </button>
+            </form>
+
+            <!-- Register Form -->
+            <form id="form-register" onsubmit="handleRegisterSubmit(event)" style="display: none;">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" id="reg-name" placeholder="e.g. John Doe" class="form-input" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label class="form-label">Username</label>
+                    <input type="text" id="reg-username" placeholder="johndoe" class="form-input" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" id="reg-email" placeholder="john@example.com" class="form-input" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label class="form-label">Password</label>
+                    <input type="password" id="reg-password" placeholder="••••••••" class="form-input" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label class="form-label">Account Role</label>
+                    <select id="reg-role" class="form-select">
+                        <option value="user">Retail Analyst (User)</option>
+                        <option value="admin">System Administrator (Admin)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Create Account
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- ADD TRANSACTION MODAL (ADMIN ONLY)         -->
+    <!-- ========================================== -->
+    <div class="modal-overlay" id="add-transaction-modal">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" onclick="closeModal('add-transaction-modal')">✕</button>
+            <h3 style="font-size: 1.25rem; color: #fff; margin-bottom: 0.35rem;">➕ Record New Sales Transaction</h3>
+            <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 1.25rem;">Insert a new sale directly into SQLite database</p>
+
+            <form id="addTransactionForm" onsubmit="handleAddTransactionSubmit(event)">
+                <div class="ml-form-grid" style="margin-bottom: 1.25rem;">
+                    <div class="form-group">
+                        <label class="form-label">Customer Name</label>
+                        <input type="text" id="add-customer-name" placeholder="Customer Name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Order Date</label>
+                        <input type="date" id="add-order-date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Region</label>
+                        <select id="add-region" class="form-select"></select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Category</label>
+                        <select id="add-category" class="form-select"></select>
+                    </div>
+                    <div class="form-group" style="grid-column: span 2;">
+                        <label class="form-label">Product Name</label>
+                        <input type="text" id="add-product-name" placeholder="Product Title" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Quantity</label>
+                        <input type="number" id="add-quantity" value="1" min="1" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Unit Price ($)</label>
+                        <input type="number" id="add-price" value="100" min="1" step="0.01" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Discount (%)</label>
+                        <input type="number" id="add-discount" value="0" min="0" max="100" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Customer Rating</label>
+                        <input type="number" id="add-rating" value="4.5" min="1" max="5" step="0.1" class="form-input">
+                    </div>
+                    <div class="form-group" style="grid-column: span 2;">
+                        <label class="form-label">Returned</label>
+                        <select id="add-returned" class="form-select">
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Save Transaction Record
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- EDIT TRANSACTION MODAL (ADMIN ONLY)        -->
+    <!-- ========================================== -->
+    <div class="modal-overlay" id="edit-transaction-modal">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" onclick="closeModal('edit-transaction-modal')">✕</button>
+            <h3 style="font-size: 1.25rem; color: #fff; margin-bottom: 0.35rem;">✏️ Edit Transaction Record</h3>
+            <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 1.25rem;">Modify existing sales record</p>
+
+            <form id="editTransactionForm" onsubmit="handleEditTransactionSubmit(event)">
+                <input type="hidden" id="edit-order-id">
+                <div class="ml-form-grid" style="margin-bottom: 1.25rem;">
+                    <div class="form-group" style="grid-column: span 2;">
+                        <label class="form-label">Customer Name</label>
+                        <input type="text" id="edit-customer-name" class="form-input" required>
+                    </div>
+                    <div class="form-group" style="grid-column: span 2;">
+                        <label class="form-label">Product Name</label>
+                        <input type="text" id="edit-product-name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Quantity</label>
+                        <input type="number" id="edit-quantity" min="1" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Unit Price ($)</label>
+                        <input type="number" id="edit-price" min="1" step="0.01" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Discount (%)</label>
+                        <input type="number" id="edit-discount" min="0" max="100" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Returned</label>
+                        <select id="edit-returned" class="form-select">
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-cyan" style="width: 100%;">
+                    Update Transaction Record
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notifications Mount Point -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Application Script -->
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
